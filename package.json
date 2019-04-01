@@ -1,0 +1,45 @@
+{
+  "name": "mobx-state-tree-router",
+  "version": "1.0.0",
+  "description": "State-based router for mobx-state-tree and react apps",
+  "keywords": [
+    "react",
+    "mobx",
+    "mobx-state-tree",
+    "state",
+    "router"
+  ],
+  "homepage": "https://github.com/miles-till/mobx-state-tree-router",
+  "bugs": "https://github.com/miles-till/mobx-state-tree-router/issues",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "author": "Miles Till",
+  "repository": "github:miles-till/mobx-state-tree-router",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "transpile": "babel src -d dist --copy-files",
+    "prepublishOnly": "npm run transpile"
+  },
+  "dependencies": {
+    "history": "4.9.0",
+    "path-match": "1.2.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "mobx": "^5.9.4",
+    "mobx-react": "^5.4.3",
+    "mobx-state-tree": "^3.12.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "peerDependencies": {
+    "mobx": "^5.9.4",
+    "mobx-react": "^5.4.3",
+    "mobx-state-tree": "^3.12.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
