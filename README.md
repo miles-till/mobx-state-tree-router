@@ -107,12 +107,12 @@ import Home from 'components/Home';
 import ItemList from 'components/ItemList';
 import Item from 'components/Item';
 export const views = {
-  home: {
+  home: View.create({
     name: 'home',
     path: '/',
     component: <Home />
-  },
-  items: {
+  }),
+  items: View.create({
     name: 'items',
     path: '/items',
     component: <ItemList />
@@ -121,8 +121,8 @@ export const views = {
         await self.root.itemStore.loadItems();
       }
     }
-  },
-  item: {
+  }),
+  item: View.create({
     name: 'item',
     path: '/item/:itemId',
     component: <Item />
@@ -132,7 +132,7 @@ export const views = {
         await self.root.itemStore.loadItem(params.itemId);
       }
     }
-  }
+  })
 };
 ```
 
