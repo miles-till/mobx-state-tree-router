@@ -154,5 +154,5 @@ These hooks provide a way to run some code during a route change. They can be sy
 ## Known Issues
 
 * `formatUrl` doesn't properly handle paths with catch-all `*`
-  * current workaround is to use the view `beforeEnter` hook on the view
+  * current workaround is to use `setView` in the `beforeEnter` hook of the catch-all to redirect to another view
 * query parameters are not handled
