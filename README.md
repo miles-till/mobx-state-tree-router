@@ -116,7 +116,7 @@ export const views = {
     name: 'items',
     path: '/items',
     component: <ItemList />
-    hooks {
+    hooks: {
       async beforeEnter(self) {
         await self.root.itemStore.loadItems();
       }
@@ -126,7 +126,7 @@ export const views = {
     name: 'item',
     path: '/item/:itemId',
     component: <Item />
-    hooks {
+    hooks: {
       async beforeEnter(self, params) {
         self.router.setProps({ itemId: params.itemId });
         await self.root.itemStore.loadItem(params.itemId);
