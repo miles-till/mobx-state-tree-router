@@ -109,32 +109,32 @@ import Home from 'components/Home';
 import ItemList from 'components/ItemList';
 import Item from 'components/Item';
 export const views = {
-  home: {
+  home: View.create({
     name: 'home',
     path: '/',
     component: <Home />
-  },
-  items: {
+  }),
+  items: View.create({
     name: 'items',
     path: '/items',
     component: <ItemList />
-    hooks {
+    hooks: {
       async beforeEnter(self) {
         await self.root.itemStore.loadItems();
       }
     }
-  },
-  item: {
+  }),
+  item: View.create({
     name: 'item',
     path: '/item/:itemId',
     component: <Item />
-    hooks {
+    hooks: {
       async beforeEnter(self, params) {
         self.router.setProps({ itemId: params.itemId });
         await self.root.itemStore.loadItem(params.itemId);
       }
     }
-  }
+  })
 };
 ```
 
