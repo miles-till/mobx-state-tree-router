@@ -1,6 +1,6 @@
 {
   "name": "mobx-state-tree-router",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "State-based router for mobx-state-tree and react apps",
   "keywords": [
     "react",
@@ -12,34 +12,49 @@
   "homepage": "https://github.com/miles-till/mobx-state-tree-router",
   "bugs": "https://github.com/miles-till/mobx-state-tree-router/issues",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "dist/mobx-state-tree-router.js",
+  "module": "dist/mobx-state-tree-router.module.js",
+  "jsnext:main": "dist/mobx-state-tree-router.module.js",
+  "umd:main": "dist/mobx-state-tree-router.js",
+  "unpkg": "dist/mobx-state-tree-router.min.js",
   "author": "Miles Till",
   "repository": "github:miles-till/mobx-state-tree-router",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "transpile": "babel src -d dist --copy-files",
-    "prepublishOnly": "npm run transpile"
+    "build": "rimraf dist && rollup -c",
+    "webpack": "rimraf dist && webpack --env build",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "history": "4.9.0",
     "path-match": "1.2.4"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
     "mobx": "^5.9.4",
     "mobx-react": "^5.4.3",
     "mobx-state-tree": "^3.12.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.10.0",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-filesize": "^6.0.1",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-uglify": "^6.0.2"
   },
   "peerDependencies": {
-    "mobx": "^5.9.4",
-    "mobx-react": "^5.4.3",
-    "mobx-state-tree": "^3.12.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "mobx": "^5.0.0",
+    "mobx-react": "^5.0.0",
+    "mobx-state-tree": "^3.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   }
 }

@@ -1,8 +1,10 @@
+<img src="media/mobx-state-tree-router.png" alt="logo" align="right" />
+
 # MobX State Tree Router <!-- omit in toc -->
 
 _State-based router for React and MobX State Tree_
 
-![MobX State Tree Router icon](media/mobx-state-tree-router.png "MobX State Tree Router icon")
+[![npm](https://img.shields.io/npm/v/mobx-state-tree-router.svg)](https://www.npmjs.com/package/mobx-state-tree-router)
 
 - [Inspiration](#inspiration)
 - [Installation](#installation)

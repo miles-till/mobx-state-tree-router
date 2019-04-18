@@ -3,4 +3,5 @@ src
 examples
 .babelrc
 .gitignore
+rollup.config.js
 webpack.config.js
