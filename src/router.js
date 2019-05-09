@@ -16,6 +16,8 @@ const createRouter = routes => {
 
 export const startRouter = routerStore => {
   const history = createBrowserHistory();
+  routerStore.setHistory(history);
+  
   const routes = createRouter(routerStore.routes);
 
   // call router.setView when url has been changed by back button

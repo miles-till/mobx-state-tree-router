@@ -30,10 +30,20 @@ const RouterStore = types
     }
   }))
   .actions(self => {
+    let _history = null;
     let _runningSetView = null;
     let _queuedSetView = null;
     const _spinWait = resolve => setTimeout(resolve, 100);
     return {
+      setHistory(history) {
+        _history = history;
+      },
+      goBack() {
+        _history.goBack();
+      },
+      goForward() {
+        _history.goForward();
+      },
       setLoading(isLoading) {
         self.isLoading = isLoading;
       },
